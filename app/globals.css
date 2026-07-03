@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f6f8;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(226, 102, 31, 0.06), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(14, 156, 140, 0.06), transparent 40%);
+}
+
+::selection {
+  background: #e2661f;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #e2661f;
+  outline-offset: 3px;
+}
+
+@keyframes agent-cycle {
+  0%, 8% { opacity: 1; filter: drop-shadow(0 0 6px rgba(226, 102, 31, 0.35)); }
+  25%, 100% { opacity: 0.35; filter: none; }
+}
+
+.agent-node {
+  opacity: 0.35;
+  animation: agent-cycle 4.8s ease-in-out infinite;
+}
+
+.agent-node[data-step="1"] { animation-delay: 0s; }
+.agent-node[data-step="2"] { animation-delay: 1.2s; }
+.agent-node[data-step="3"] { animation-delay: 2.4s; }
+.agent-node[data-step="4"] { animation-delay: 3.6s; }
+
+.agent-path {
+  stroke-dasharray: 6 8;
+  animation: dash-move 1.4s linear infinite;
+}
+
+@keyframes dash-move {
+  to { stroke-dashoffset: -28; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
