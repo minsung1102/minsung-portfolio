@@ -196,19 +196,18 @@ export default function Home() {
           {/* Signature: horizontal system-flow diagram */}
           <div className="mt-10 rounded-2xl border border-line bg-panel p-6">
             <svg viewBox="0 0 560 90" className="w-full" aria-hidden="true">
-              <line x1="40" y1="45" x2="180" y2="45" stroke="#DFE3EA" strokeWidth="1.5" />
-              <line x1="180" y1="45" x2="320" y2="45" stroke="#DFE3EA" strokeWidth="1.5" />
-              <line x1="320" y1="45" x2="460" y2="45" stroke="#DFE3EA" strokeWidth="1.5" />
+              <line x1="40" y1="45" x2="460" y2="45" stroke="#DFE3EA" strokeWidth="1.5" />
               <line
                 x1="40"
                 y1="45"
-                x2="180"
+                x2="460"
                 y2="45"
                 stroke="#E2661F"
                 strokeWidth="1.5"
                 className="agent-path"
                 strokeLinecap="round"
               />
+              <circle cx="40" cy="45" r="3" fill="#0E9C8C" className="dot-move" />
               {[
                 { x: 40, label: "IDEA", active: true },
                 { x: 180, label: "DESIGN", active: false },
@@ -223,6 +222,8 @@ export default function Home() {
                     fill="#FFFFFF"
                     stroke={n.active ? "#E2661F" : "#C7CDD6"}
                     strokeWidth="1.5"
+                    className="node-pulse"
+                    style={{ animationDelay: `${((n.x - 40) / 420) * 5.6}s` }}
                   />
                   <text
                     x={n.x}
@@ -236,7 +237,6 @@ export default function Home() {
                   </text>
                 </g>
               ))}
-              <circle cx="110" cy="45" r="3" fill="#0E9C8C" />
             </svg>
             <div className="mt-2 flex flex-wrap items-center justify-between gap-2 font-mono text-[10px] text-text-muted">
               <span>ERD → CRUD → WebSocket → 반응형 UI</span>

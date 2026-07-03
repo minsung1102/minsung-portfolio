@@ -47,6 +47,29 @@ body {
   to { stroke-dashoffset: -28; }
 }
 
+.dot-move {
+  animation: dot-move 7.6s linear infinite;
+}
+
+@keyframes dot-move {
+  0% { cx: 40; }
+  73.68% { cx: 460; }
+  100% { cx: 460; }
+}
+
+.node-pulse {
+  animation: node-flash 7.6s linear infinite;
+}
+
+@keyframes node-flash {
+  0% { stroke: #E2661F; }
+  3.5% { stroke: #E2661F; }
+  4.5% { stroke: #C7CDD6; }
+  95.5% { stroke: #C7CDD6; }
+  96.5% { stroke: #E2661F; }
+  100% { stroke: #E2661F; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
