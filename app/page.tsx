@@ -1,3 +1,4 @@
+import Image from "next/image";
 import MobileNav from "./MobileNav";
 
 const steps = [
@@ -53,6 +54,12 @@ const project = {
   desc: "취업준비생을 위한 자격증 일정 관리·스터디 매칭·실시간 채팅 플랫폼. ERD 설계, CRUD 개발, WebSocket 기반 실시간 알림, 반응형 UI 구현을 담당했습니다.",
   stack: ["Java", "Spring Boot", "Spring Data JPA", "MariaDB", "React", "WebSocket"],
   link: "https://github.com/minsung1102/highpass_project",
+  images: [
+    "/highpass/1.png",
+    "/highpass/2.png",
+    "/highpass/3.png",
+    "/highpass/4.png",
+  ],
 };
 
 const skills = [
@@ -322,6 +329,23 @@ export default function Home() {
             >
               GitHub에서 코드 보기 ↗
             </a>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {project.images.map((src) => (
+                <div
+                  key={src}
+                  className="relative aspect-video overflow-hidden rounded-xl border border-line bg-ink"
+                >
+                  <Image
+                    src={src}
+                    alt={`${project.name} 화면 캡처`}
+                    fill
+                    sizes="(min-width: 768px) 45vw, 90vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

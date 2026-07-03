@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import ChatWidget from "./ChatWidget";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -33,7 +34,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="font-body bg-ink text-text antialiased">{children}</body>
+      <body className="font-body bg-ink text-text antialiased">
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   );
 }
