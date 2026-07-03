@@ -369,19 +369,9 @@ export default function Home() {
         >
           GitHub에서 더 보기
         </a>
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="mailto:kms38400097@gmail.com"
-            className="inline-block rounded-full border border-line px-6 py-3 text-sm font-medium text-text transition-colors hover:border-accent"
-          >
-            이메일 보내기
-          </a>
-          <a
-            href="tel:010-3840-0097"
-            className="inline-block rounded-full border border-line px-6 py-3 text-sm font-medium text-text transition-colors hover:border-accent"
-          >
-            전화 연결하기
-          </a>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 font-mono text-sm text-text-muted">
+          <span>kms38400097@gmail.com</span>
+          <span>010-3840-0097</span>
         </div>
       </section>
 
