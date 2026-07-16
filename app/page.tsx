@@ -59,7 +59,8 @@ const project = {
 
 const miniProject = {
   name: "와인 품종 대시보드",
-  desc: "와인의 화학 성분 데이터를 기반으로 품종을 분석하고 시각화하는 Streamlit 대시보드.",
+  desc: "와인의 화학 성분(산도, 당도, 알코올 도수 등) 데이터를 분석해 품종을 분류하고, 성분 간 상관관계와 분포를 인터랙티브 차트로 시각화하는 데이터 분석 대시보드입니다. pandas로 데이터를 전처리하고 scikit-learn으로 품종 분류 모델을 구성했습니다.",
+  stack: ["Python", "Streamlit", "Pandas", "scikit-learn"],
   link: "https://app-7tagwgp4stw7vbyavtej7i.streamlit.app/",
 };
 
@@ -350,6 +351,16 @@ export default function Home() {
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-muted">
               {miniProject.desc}
             </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {miniProject.stack.map((s) => (
+                <span
+                  key={s}
+                  className="rounded-full border border-line px-3 py-1 font-mono text-xs text-text-muted"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
             <a
               href={miniProject.link}
               target="_blank"
