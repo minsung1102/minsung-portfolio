@@ -57,6 +57,12 @@ const project = {
   video: "/highpass-intro.mp4",
 };
 
+const miniProject = {
+  name: "와인 품종 대시보드",
+  desc: "와인의 화학 성분 데이터를 기반으로 품종을 분석하고 시각화하는 Streamlit 대시보드.",
+  link: "https://app-7tagwgp4stw7vbyavtej7i.streamlit.app/",
+};
+
 const skills = [
   "Java",
   "Spring Boot",
@@ -334,6 +340,24 @@ export default function Home() {
                 className="w-full"
               />
             </div>
+          </div>
+
+          <h3 className="mt-16 font-mono text-xs tracking-[0.2em] text-signal">미니 프로젝트</h3>
+          <div className="mt-4 rounded-2xl border border-line bg-panel p-8">
+            <h4 className="font-display text-xl font-bold tracking-tight">
+              {miniProject.name}
+            </h4>
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-text-muted">
+              {miniProject.desc}
+            </p>
+            <a
+              href={miniProject.link}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-block rounded-full border border-line px-5 py-2 text-sm font-medium text-text transition-colors hover:border-accent"
+            >
+              대시보드 보러가기 ↗
+            </a>
           </div>
         </div>
       </section>
